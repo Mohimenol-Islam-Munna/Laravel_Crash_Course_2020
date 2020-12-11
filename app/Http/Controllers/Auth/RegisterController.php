@@ -41,7 +41,13 @@ class RegisterController extends Controller
         DB::table('users')->insert($form_data);
 
         // login after register
-        auth()->attempt($request->only('email', 'password'));
+        $login_data = auth()->attempt($request->only('email', 'password'));
+
+        // check login success or fail
+        if(!$login_data){
+
+            return back()->with('Error', 'Login creadentials are incorrect');
+        }
 
         return redirect()->route('dashboard');
     }

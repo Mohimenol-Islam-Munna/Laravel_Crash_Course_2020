@@ -18,13 +18,18 @@
             <li class="p-4 ">
                 <a href="{{ URL('/') }}">Home</a>
             </li>
-            @auth
+
                 <li class="p-4 ">
                     <a href=" {{ route('dashboard') }}">Dashboard</a>
                 </li>
-            @endauth
+
             <li class="p-4 ">
-                <a href="">Posts</a>
+                <a href=" {{ URL('/posts') }}">Posts</a>
+            </li>
+
+            {{-- player crud  --}}
+            <li class="p-4 ">
+                <a href=" {{ URL('/players') }}">Players</a>
             </li>
         </ul>
 
@@ -32,17 +37,22 @@
         <ul class="flex justify-center">
             @guest
                 <li class="p-4 ">
-                    <a href="{{ URL('/login') }}">Login</a>
+                    <a href="{{ route('login') }}">Login</a>
                 </li>
                 <li class="p-4 ">
                     <a href="{{ URL('/register') }}">Register</a>
                 </li>
+
             @else
+
                 <li class="p-4 ">
                     <a href="">{{ Auth::user()->name }}</a>
                 </li>
                 <li class="p-4 ">
-                    <a href="{{ URL('/logout') }}">Logout</a>
+                    <form action="{{ URL('/logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
                 </li>
             @endguest
         </ul>
