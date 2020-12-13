@@ -40,9 +40,9 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'player' => [
+        'like' => [
             'driver' => 'session',
-            'provider' => 'players',
+            'provider' => 'likes',
         ],
 
         'api' => [
@@ -75,9 +75,9 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'players' => [
+        'likes' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Player::class,
+            'model' => App\Models\Like::class,
         ],
 
 
@@ -109,8 +109,8 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-        'players' => [
-            'provider' => 'players',
+        'likes' => [
+            'provider' => 'likes',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

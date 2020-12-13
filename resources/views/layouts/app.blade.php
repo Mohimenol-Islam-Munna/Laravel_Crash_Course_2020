@@ -26,11 +26,6 @@
             <li class="p-4 ">
                 <a href=" {{ URL('/posts') }}">Posts</a>
             </li>
-
-            {{-- player crud  --}}
-            <li class="p-4 ">
-                <a href=" {{ URL('/players') }}">Players</a>
-            </li>
         </ul>
 
         {{-- right menu items  --}}
