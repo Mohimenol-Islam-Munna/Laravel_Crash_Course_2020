@@ -39,6 +39,12 @@
                 <h1 class="text-center mx-5 ">All Post</h1>
             </div>
 
+            @if ( session('DeletePost'))
+                <h2 class="bg-red-300 border-2 w-full p-4 rounded-lg">
+                    {{ session('DeletePost')}}
+                </h2>
+            @endif
+
             <div class="mt-1">
                 @foreach ($data as $item)
                     <div class="bg-white p-6 mb-2 rounded-lg">
@@ -48,6 +54,15 @@
                         <p class="mt-5 text-justify">
                             {{ $item->body }}
                         </p>
+
+                        {{-- delete and edit post  --}}
+
+                        @if (auth()->id() === $item->user_id )
+                        <form action="{{ URL('delete/'.$item->id) }}" method="post">
+                            @csrf
+                            <button type="submit" class="mr-1 text-blue-500">Delete</button>
+                        </form>
+                        @endif
 
                         <div class="flex items-center mt-2">
 

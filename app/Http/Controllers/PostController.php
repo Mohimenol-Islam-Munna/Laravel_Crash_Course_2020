@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function index(){
 
-        $data =  Post::paginate(3);
+        $data =  Post::paginate(5);
 
         return view('posts.index', ['data' => $data]);
     }
@@ -36,5 +36,16 @@ class PostController extends Controller
 
         return back()->with('result', 'Post submitted successfully');
 
+    }
+
+    public function destroy(Post $post){
+
+
+        // dd($post->body);
+
+        $post->delete();
+
+
+        return back()->with("DeletePost", "Post Deleted Successfully");
     }
 }

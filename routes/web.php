@@ -37,3 +37,7 @@ Route::post('/posts', [PostController::class, 'store'])->middleware('auth');
 Route::post('/like/{id}', [LikeController::class, 'store']);
 Route::post('/unlike/{id}', [LikeController::class, 'destroy']);
 
+
+// Delete post
+Route::post('delete/{post}', [PostController::class, 'destroy']);
+

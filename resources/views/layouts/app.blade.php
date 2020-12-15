@@ -19,9 +19,9 @@
                 <a href="{{ URL('/') }}">Home</a>
             </li>
 
-                <li class="p-4 ">
-                    <a href=" {{ route('dashboard') }}">Dashboard</a>
-                </li>
+            <li class="p-4 ">
+                <a href=" {{ route('dashboard') }}">Dashboard</a>
+            </li>
 
             <li class="p-4 ">
                 <a href=" {{ URL('/posts') }}">Posts</a>
