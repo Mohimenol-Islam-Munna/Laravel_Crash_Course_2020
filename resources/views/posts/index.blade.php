@@ -2,7 +2,7 @@
 
 @section('dynamic_content')
     <div>
-        <div class="w-8/12 bg-white p-6 justify-center rounded-lg mx-auto">
+        <div class="w-10/12 bg-white p-6 justify-center rounded-lg mx-auto">
             <form action="{{ URL('/posts') }}" method="POST"  class="mb-0">
                 @csrf
                 <div class="mb-4">
@@ -34,7 +34,7 @@
         </div>
 
         {{-- show post  --}}
-        <div class="w-8/12 mt-6 justify-center rounded-lg mx-auto">
+        <div class="w-10/12 mt-6 justify-center rounded-lg mx-auto">
             <div class="w-12/12 bg-green-300 p-4 rounded-lg mb-1">
                 <h1 class="text-center mx-5 ">All Post</h1>
             </div>
@@ -64,6 +64,8 @@
                         </form>
                         @endif
 
+
+
                         <div class="flex items-center mt-2">
 
                             @if ($item->like->contains('user_id', auth()->user()->id ))
@@ -82,9 +84,7 @@
                             <span>{{ $item->like->count()}} {{ Str::plural('like', $item->like->count() )}}</span>
                         </div>
                     </div>
-
                 @endforeach
-
 
                 <div class="bg-white rounded-lg mb-6">
                     <div class="bg-green-300 p-4 mb-2 rounded-lg">

@@ -8,11 +8,10 @@
 
     {{-- tailwind css  --}}
     <link rel="stylesheet" href="{{ asset('css/app.css')}}">
-
 </head>
-<body class="bg-gray-200 mt-0 pt-0">
+<body class="bg-gray-200">
     {{-- menu items  --}}
-    <nav class="p-5 bg-white flex justify-between mt-0 mb-6 sticky top-0 left-0 right-0">
+    <nav class="w-10/12 mx-auto p-5 bg-white flex justify-between mb-6  sticky top-0 left-0 right-0">
         {{-- left menu items  --}}
         <ul class="flex justify-center">
             <li class="p-4 ">

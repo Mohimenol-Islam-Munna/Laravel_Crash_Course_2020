@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+// Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
 // User login
@@ -34,6 +35,7 @@ Route::post('/logout', [LogoutController::class, 'logout']);
 Route::get('/posts', [PostController::class, 'index'])->middleware('auth');
 Route::post('/posts', [PostController::class, 'store'])->middleware('auth');
 
+// like unlike 
 Route::post('/like/{id}', [LikeController::class, 'store']);
 Route::post('/unlike/{id}', [LikeController::class, 'destroy']);
 
